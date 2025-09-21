@@ -11,6 +11,7 @@ Le but de l’exercice est d'identifier la source d’un menace interne et  d'an
 
 * HTB Sherlocks
 * OSINT, MITRE ATT&CK
+* unfurl, exiftool, pdfinfo
 
 **Investigation Steps (short):**
 1. L'analyse de URLs
@@ -48,6 +49,7 @@ Le but de l’exercice est d'identifier la source d’un menace interne et  d'an
 - DFIR (Digital Forensics and Incident Response) >>
 - **unfurl** >> l'outil magique pour analyser l'URL davantage
 - Discord Snowflakes - ils sont des information de la date
+- **pdfinfo**, et **exiftool** sont utilisés pour obtenir les données de **metadata**
 
 - Voilà, ça y est, c'est fini: `https://labs.hackthebox.com/achievement/sherlock/2118023/572`
 

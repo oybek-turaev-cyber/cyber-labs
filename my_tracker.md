@@ -10,4 +10,5 @@
     - Le nombre des Sherlock Machines: est **6**.
 
 3. Continuer **Blue-Team Sherlocks** sur la plateforme **Hack The Box**
+    - Fini la machine: **Brutus** >> le **7ime** Sherlock.
     - C'est en cours maintenant!

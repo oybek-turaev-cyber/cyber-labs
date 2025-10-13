@@ -135,6 +135,7 @@ La vulnerabilité: `MOVEit`
     - Après, on a analysé la source: `i-like-to.vmem` et a trouvé la commande: `net user` qui peut-être utilisé pour modifier le mot de passe de compte.
     - Et cela est notre réponse: `net user 5trongP4ssw0rd`
     - Voilà, la preuve:
+    ![Le mot de passe modifié](images/14.png)
 
 ## Key Learning / Takeaway:
 1. Les fichiers: **.aspx** >> webshell >> ils peuvent contenir script pour le framework Microsoft: **ASP.NET**

@@ -1,2 +1,5 @@
 # Ignorer tous les templates
 **/template*
+
+# Ignorer tous les Obisidian config fichiers
+**/.obsidian*

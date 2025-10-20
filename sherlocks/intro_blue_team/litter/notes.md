@@ -30,8 +30,8 @@ Le but de la chasse est identifier la source d’un accès non autorisé par que
     - Donc, quand on a verifié le colonne: **Conversations** dans Wireshark, on a trouvé trois connexions et parmi eux, le plus grand nombre de paquets était (10,192) avec l'IP:  `192.168.157.145`
     - C'était l'IP de l'attaquant.
     - Voilà: la preuve:
-    ![IP de l'attaquant](2.png)
-    ![IP test](2.1.png)
+    ![IP de l'attaquant](images/2.png)
+    ![IP test](images/2.1.png)
 
 3. On doit trouver la première commande dont l'attaquant a utilisé:
     - Pour trouver cette information, on doit enquêter chaque paquet pour trouver le longue string
@@ -75,47 +75,47 @@ Le but de la chasse est identifier la source d’un accès non autorisé par que
     - En utilisent le Google, j'ai trouvé le script pour extraire les données
     - Voilà: le Python script:
     ```python
-from scapy.all import *
-def is_hex(s):
-    # Hex Value Checker
-    try:
-        int(s, 16)
-        return True
-    except ValueError:
-        return False
-r = rdpcap('suspicious_traffic.pcap')
-with open("output.txt", "w") as myfile:
-    c = b""
-    for packet in r:
-    writes to or use live tshark method
-    if packet.haslayer(DNSQR):
-            a = packet[DNSQR].qname
-            no9 = a[18:]
-            b = no9.replace(b'microsofto365.com.', b'')
-            if not b or b == c:
-                continue
-            c = b
+        from scapy.all import *
+        def is_hex(s):
+            # Hex Value Checker
             try:
-                hex_chars = ''.join(ch for ch in b.decode(errors='ignore') if ch in '0123456789abcdefABCDEF')
-                ascii_str = bytes.fromhex(
-import csv
-import re
+                int(s, 16)
+                return True
+            except ValueError:
+                return False
+        r = rdpcap('suspicious_traffic.pcap')
+        with open("output.txt", "w") as myfile:
+            c = b""
+            for packet in r:
+            writes to or use live tshark method
+            if packet.haslayer(DNSQR):
+                    a = packet[DNSQR].qname
+                    no9 = a[18:]
+                    b = no9.replace(b'microsofto365.com.', b'')
+                    if not b or b == c:
+                        continue
+                    c = b
+                    try:
+                        hex_chars = ''.join(ch for ch in b.decode(errors='ignore') if ch in '0123456789abcdefABCDEF')
+                        ascii_str = bytes.fromhex(
+        import csv
+        import re
 
-count = 0
-pattern = re.compile(r'\d{4}-\d{2}-\d{2}')
+        count = 0
+        pattern = re.compile(r'\d{4}-\d{2}-\d{2}')
 
-with open("output.txt", newline='', encoding='utf-8', errors='ignore') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        for field in row:
-            if pattern.search(field):
-                count += 1
+        with open("output.txt", newline='', encoding='utf-8', errors='ignore') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                for field in row:
+                    if pattern.search(field):
+                        count += 1
 
-print(count)
-).decode('utf-8', errors='ignore')
-                myfile.write(ascii_str + '\n')
-            except ValueError as e:
-                print(f"Error converting hex to ASCII: {e}")
+        print(count)
+        ).decode('utf-8', errors='ignore')
+                        myfile.write(ascii_str + '\n')
+                    except ValueError as e:
+                        print(f"Error converting hex to ASCII: {e}")
     ```
     - Et, j'ai trouvé que l'attaquant a lu le fichier: **user details.csv** dans cette location: `"C:\Users\test\Documents\client data optimisation\user details.csv"`
     - Voilà, la preuve:

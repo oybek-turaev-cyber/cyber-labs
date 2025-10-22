@@ -9,12 +9,14 @@ Le but de cet exercice et chasse est d'identifier la source d’un accès non au
 
 ## Environment / Tools Used:
 * HTB Sherlocks: SOC, DFIR
-* Windows Event Viewer, Chainsaw, Google Search, Windows Event ID List
+* Windows Event Viewer, Advanced XML Filtering
+* Chainsaw, Timeline Explorer
+* Google Search, Windows Event ID List
 
 ## Investigation Steps:
 1. Analyser les informations disponiblees: **Windows Logs: Security, System, Powershell, Defender**
 2. Trouver les informations avec les **Windows Event IDs** certaines:
-3. Utiliser l'outil: *Windows Event Viewer* et *Chainsaw*
+3. Utiliser l'outil: **Windows Event Viewer** avec **Advanced XML Filtering** et **Chainsaw** avec **Timeline Explorer** par Eric Zimmerman
 
 ## Findings:
 1. On doit trouver quand l'utilisateur: Cyberjunkie a fait le premier login dans son système

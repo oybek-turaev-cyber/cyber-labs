@@ -40,6 +40,7 @@ Le but de cet exercice et cette chasse est d'identifier les problems avec **AWC 
         index="okay_json" requestParameters_bucketName="forela-fileshare" sourceIPAddress="54.242.59.197"
         requestParameters_key="_restricted/Priv-Keys/prod-EC2-readonly_accessKeys.csv"
     ```
+    - Analyse:
         - `requestParameters_bucketName` pour préciser le nom de bucket: *forela-fileshare*
         - Et j'ai l'IP de l'attaquant, donc, j'ai utilisé cela aussi: `sourceIPAddress = 54.242.59.197`
         - `requestParameters_key` montre le fichier accès, donc je voulais voir quels fichiers l'attaquant a accès
